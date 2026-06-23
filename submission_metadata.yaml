@@ -1,0 +1,69 @@
+# Redrob Hackathon — Submission Metadata
+#
+# Filled in configuration for team submission. Edit your team details below.
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "KRII"  # Used in leaderboard and announcements
+
+primary_contact:
+  name: "Krisha Oswal"
+  email: "krisha.oswal06@gmail.com"   # Used for all organizer communication
+  phone: "+91-8999397344"          # Used for top-50 / top-10 outreach
+
+team_members:
+  - name: "Krisha Oswal"
+    email: "krisha.oswal06@gmail.com"
+    role: "Student"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: ""
+# Required. Must be reachable. Private repos OK if you can grant organizer access.
+
+sandbox_link: ""
+# Required. A working hosted environment where the ranker can be run on a small candidate sample.
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+# The single command that produces submission.csv from candidates.jsonl.
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "MacBook Pro"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11.10"
+  os: "macOS 26.3"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+ai_tools_used:
+  - "Gemini"
+
+ai_usage_summary: |
+  Used Gemini as an agentic pair-programmer to design and implement the ranking algorithm, explore the datasets, design the honeypot discount and availability multipliers, and validate formatting compliance. No candidate profile data was sent to external LLMs.
+
+# ============================================================================
+# Approach summary
+# ============================================================================
+methodology_summary: |
+  Rule-based candidate ranker with explicit reasoning generation. Candidates are filtered using a services-only consulting gate and a CV/Speech-only skill gate. Candidates are scored based on YOE alignment (5-9 years target), role title relevance (boosting core AI/ML/Search roles), narrative keyword match, and core skill proficiencies (including rare paraphrased skills for Tier 5 candidates). Behavioral and location metrics (activity recency, notice period, location willingness) are applied as multipliers. Subtle honeypot traps (zero-duration experts, calendar date mismatches, and excess skill duration relative to YOE) are discounted via a severity penalty. Runs in ~15 seconds on CPU.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
