@@ -11,8 +11,7 @@ The pipeline is implemented as a single, highly-optimized script, [rank.py](file
 The pipeline processes each candidate in four main stages:
 
 ```mermaid
-graph TD
-<img width="433" height="757" alt="Screenshot 2026-06-24 at 10 48 24 PM" src="https://github.com/user-attachments/assets/ebbe9538-6e8d-4bb3-8ce8-be819e0e1ca1" />
+<img width="433" height="757" alt="Screenshot 2026-06-24 at 10 48 24 PM" src="https://github.com/user-attachments/assets/ebbe9538-6e8d-4bb3-8ce8-be819e0e1ca1" />
 
 
 
